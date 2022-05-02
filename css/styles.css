@@ -18,6 +18,7 @@
     --color-icon-team: #afb1b8;
     --color-footer-item-link: #ffffff;
     --hover-icon-fill: #ffffff;
+    --color-text-input-footer: rgba(255, 255, 255, 0.6);
 
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -562,7 +563,8 @@ img {
     margin-left: 10px;
 }
 
-.social-connect {
+.social-connect,
+.folow-connect {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
@@ -588,6 +590,63 @@ img {
 .social-item-link:hover,
 .social-item-link:focus {
     background-color: var(--accent-color);
+}
+
+.footer-folow {
+    margin-left: 93px;
+    display: block;
+}
+
+. .folow-connect {
+    display: block;
+    width: 570px;
+}
+.folow-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.folow-form-input {
+    box-sizing: border-box;
+    padding: 14px 0px 14px 16px;
+    width: 358px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: var(--color-text-input-footer);
+    background-color: inherit;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    outline: none;
+}
+
+.folow-button {
+    width: 200px;
+    margin-left: 12px;
+    /* padding: 10px 28px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--footer-addres-white);
+    background-color: var(--accent-color);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    outline: none;
+}
+
+.icon-send {
+    margin-left: 10px;
 }
 
 /* ---------------------backdrop------------------------- */
