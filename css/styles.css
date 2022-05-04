@@ -611,13 +611,20 @@ img {
 .folow-form-input {
     padding: 15px 0px 15px 16px;
     width: 358px;
-    background-color: inherit;
+    background-color: transparent;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     color: var(--footer-addres-white);
     line-height: 1.25;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    cursor: pointer;
+    transition: border-color 250ms var(--timing-function);
+}
+
+.folow-form-input:hover,
+.folow-form-input:focus {
+    border-color: var(--accent-color);
 }
 
 .folow-form-input::placeholder {
@@ -649,12 +656,14 @@ img {
     border-radius: 4px;
     border: none;
     cursor: pointer;
-    transition: box-shadow var(--timing-function);
+    transition: box-shadow 250ms var(--timing-function),
+        background-color 250ms var(--timing-function);
 }
 
 .folow-button:hover,
 .folow-button:focus {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: var(--hover-color-btn);
 }
 
 .icon-send {
@@ -750,14 +759,30 @@ img {
     border: 1px solid var(--color-border-modal-input);
     border-radius: 4px;
     padding-left: 42px;
+    outline: none;
+    transition: border-color 250ms var(--timing-function);
+    cursor: pointer;
+}
+
+.modal-input:hover,
+.modal-input:focus {
+    border-color: var(--accent-color);
 }
 
 .modal-icon {
     position: absolute;
 
-    top: 11px;
+    bottom: 11px;
     left: 12px;
+
+    transition: fill 250ms var(--timing-function);
 }
+
+.modal-input:hover + .modal-icon,
+.modal-input:focus + .modal-icon {
+    fill: var(--accent-color);
+}
+
 .modal-text {
     padding: 12px 16px;
     width: 100%;
@@ -765,7 +790,16 @@ img {
     border: 1px solid var(--color-border-modal-input);
     border-radius: 4px;
     resize: none;
+    outline: none;
+    transition: fill 250ms var(--timing-function);
+    cursor: pointer;
 }
+
+.modal-text:hover,
+.modal-text:focus {
+    border-color: var(--accent-color);
+}
+
 .modal-text::placeholder {
     font-weight: 400;
     font-size: 12px;
@@ -794,8 +828,37 @@ img {
     color: var(--second-text-color);
 }
 
-.checkbox-link:visited {
-    text-decoration: none;
+.checkbox-text::before {
+    content: '11';
+    width: 16px;
+    height: 15px;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+/* .checkbox-text::before {
+    content: '';
+    width: 26px;
+    height: 35;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    margin-right: 5px;
+} */
+
+/* .checkbox-input:checked + .checkbox-text::before {
+    background-color: var(--accent-color);
+    border: none;
+    background-image: url(../images/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+.checkbox-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
 }
 
 .form-btn {
