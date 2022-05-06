@@ -21,6 +21,7 @@
     --color-text-input-footer: rgba(255, 255, 255, 0.6);
     --color-border-modal-input: rgba(33, 33, 33, 0.2);
     --color-placeholder-textarea: rgba(117, 117, 117, 0.5);
+    --color-border-checkbox: #212121;
 
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -618,7 +619,6 @@ img {
     color: var(--footer-addres-white);
     line-height: 1.25;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-    cursor: pointer;
     transition: border-color 250ms var(--timing-function);
 }
 
@@ -749,6 +749,7 @@ img {
     font-size: 12px;
     line-height: 1.16;
     letter-spacing: 0.01em;
+    align-items: center;
 }
 
 .modal-input {
@@ -776,6 +777,10 @@ img {
     left: 12px;
 
     transition: fill 250ms var(--timing-function);
+}
+
+.modal-input:hover + .modal-icon {
+    fill: var(--accent-color);
 }
 
 .modal-input:hover + .modal-icon,
@@ -814,13 +819,15 @@ img {
 }
 
 .conditions {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
 }
 
-.checkbox-input {
-}
 .checkbox-text {
+    display: flex;
+    align-items: center;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
@@ -829,36 +836,29 @@ img {
 }
 
 .checkbox-text::before {
-    content: '11';
+    display: inline-block;
+    content: '';
     width: 16px;
     height: 15px;
-    border: 2px solid #000000;
-    border-radius: 3px;
+    border: 3px solid var(--color-border-checkbox);
+    border-radius: 2px;
     margin-right: 5px;
 }
 
-/* .checkbox-text::before {
-    content: '';
-    width: 26px;
-    height: 35;
-    border: 2px solid #000000;
-    border-radius: 3px;
-    margin-right: 5px;
-} */
-
-/* .checkbox-input:checked + .checkbox-text::before {
+.checkbox-input:checked + .checkbox-text::before {
     background-color: var(--accent-color);
     border: none;
-    background-image: url(../images/check.svg);
+    background-image: url(../image/icon/icon-check.svg);
     background-repeat: no-repeat;
     background-position: center;
-} */
+}
 
 .checkbox-link {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.03em;
+    color: var(--accent-color);
 }
 
 .form-btn {
